@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+
+}
+
+#coin{
+  position: relative;
+  margin: 0 auto;
+  width: 300px;
+  height:300px;
+  transition: transform 1s ease-in;
+  transform-style: preserve-3d;
+}
+#coin div{
+  width: 100%;
+  height:100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.side1{
+  background-image: url("./images/SHalfDollarObverse2016head-300x300.jpg");
+  background-size: cover;
+  z-index: 999;
+}
+.side2{
+  background-image: url("./images/tails-200x200.jpg");
+  background-size: cover;
+  transform: rotateY(-180deg);
+}
+.btn{
+  margin-top:10px
+}
+#coin.heads{
+  animation: flipHead 2s ease-out forwards
+}
+#coin.tails{
+  animation: flipTail 2s ease-out forwards
+}
+@keyframes flipHead{
+  from{
+    transform: rotateY(0)
+  }
+  to{
+    transform: rotateY(540deg)
+  }
+}
+@keyframes flipTail{
+  from{
+    transform: rotateY(0)
+  }
+  to{
+    transform: rotateY(720deg)
+  }
+}
